@@ -1,0 +1,186 @@
+.main{
+    width: 100%;
+    height: 1500px;
+}
+.worksContainer{
+    width: 100%;
+    height: 50%;
+    display: flex;
+}
+.picOne{
+    width: 25%;
+    height: 100%;
+    background-image: url(../pics/6a7c7587c28ac6412e8b7443e4564918.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center center;
+}
+.picTwo{
+width: 25%;
+    height: 100%;
+    background-image: url(../pics/41c5ed46131fdcce18d2f62b0ec4c605\ \(1\).jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center center;
+}
+.picThree{
+width: 25%;
+    height: 100%;
+    background-image: url(../pics/7d3c15f3233084285bedfe4130c1d441.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center center;
+}
+.picFourth{
+width: 25%;
+    height: 100%;
+    background-image: url(../pics/87b64b1be6d028723e653778fc0301f5.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center center;
+}
+.worksContainerTwo{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+}
+.photoOne{
+    width: 25%;
+    height: 100%;
+    background-image: url(../pics/2223.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center center;
+}
+.photoTwo{
+width: 25%;
+    height: 100%;
+    background-image: url(../pics/224.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center center;
+}
+.photoThree{
+width: 25%;
+    height: 100%;
+    background-image: url(../pics/1116.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center center;
+}
+.worksContainerThree{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+}
+.photoOneTwo{
+    width: 25%;
+    height: 100%;
+    background-image: url(../pics/555552.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center center;
+}
+.photoTwoTwo{
+width: 25%;
+    height: 100%;
+    background-image: url(../pics/2342.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center center;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes zoomOut {
+  from { transform: scale(1); opacity: 1; }
+  to { transform: scale(0.8); opacity: 0; }
+}
+
+.fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.fadeOut {
+  animation: fadeOut 0.3s ease-out forwards;
+}
+
+.zoomIn {
+  animation: zoomIn 0.3s ease-out forwards;
+}
+
+.zoomOut {
+  animation: zoomOut 0.3s ease-out forwards;
+}
+
+
+.imageItem {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.imageItem:hover {
+  transform: scale(1.02);
+}
+
+.fullSizeImage {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: contain;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  width: 100%;
+  height: 100%;
+}
+
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 1001;
+  transition: transform 0.2s;
+}
+
+.closeButton:hover {
+  transform: scale(1.2);
+}
