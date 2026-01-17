@@ -1,26 +1,28 @@
-
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import z from './HeaderMain.module.css';
 
 const HeaderMain = () => {
   const [visibleLines, setVisibleLines] = useState([]);
-  const lines = [
+
+  const lines = useMemo(() => [
     "Created",
     "By me",
     "With love",
     "For",
     "Son_rra"
-  ];
+  ], []); 
 
-useEffect(() => {
-  const timers = lines.map((line, index) => {
-    return setTimeout(() => {
-      setVisibleLines(prev => [...prev, line]);
-    }, index * 1000);
-  });
+  useEffect(() => {
+    const timers = lines.map((line, index) => {
+      return setTimeout(() => {
+        setVisibleLines(prev => [...prev, line]);
+      }, index * 1000);
+    });
 
-  return () => timers.forEach(timer => clearTimeout(timer)); 
-}, []); // 👈 пустой массив
+    return () => {
+      timers.forEach(timer => clearTimeout(timer));
+    };
+  }, [lines]); // ✅ Теперь зависимости стабильны
 
   return (
     <div className={z.main}>
@@ -31,13 +33,15 @@ useEffect(() => {
         <button className={z.footer}>Footer</button>
       </div>
       
-     <div className={z.textColumn}>
+      <div className={z.textColumn}>
         {visibleLines.map((line, index) => (
           <div 
             key={index}
             className={z.textLine}
             style={{ 
-                 top: `${index * 100}px`,animationDelay: `${index * 0.3}s` }} 
+              top: `${index * 100}px`,
+              animationDelay: `${index * 0.3}s`
+            }} 
           >
             {line}
           </div>
