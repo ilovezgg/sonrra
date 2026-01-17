@@ -12,15 +12,15 @@ const HeaderMain = () => {
     "Son_rra"
   ];
 
- useEffect(() => {
-    const timers = lines.map((line, index) => {
-      return setTimeout(() => {
-        setVisibleLines(prev => [...prev, line]);
-      }, index * 1000);
-    });
+useEffect(() => {
+  const timers = lines.map((line, index) => {
+    return setTimeout(() => {
+      setVisibleLines(prev => [...prev, line]);
+    }, index * 1000);
+  });
 
-    return () => timers.forEach(timer => clearTimeout(timer)); 
-  }, []);
+  return () => timers.forEach(timer => clearTimeout(timer)); 
+}, []); // 👈 пустой массив
 
   return (
     <div className={z.main}>
